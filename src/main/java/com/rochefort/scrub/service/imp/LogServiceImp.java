@@ -50,9 +50,12 @@ public class LogServiceImp implements LogService {
 
     @Override
     public void testLock() throws InterruptedException {
-        entityManager.find(CustomLogEntity.class, 10);
+        CustomLogEntity customLogEntity = customLogRepository.findById(10L)
+                .orElseThrow(RuntimeException::new);
 
-        TimeUnit.SECONDS.sleep(30);
+        customLogEntity.setDevice("Test");
+
+        customLogRepository.save(customLogEntity);
 
         System.out.println("Done");
     }
