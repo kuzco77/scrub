@@ -1,0 +1,9 @@
+server:
+  port: 2012
+  hostname: TzuPClocal
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@125.212.226.94:61521:VCC
+    username: IIM
+    password: QLKTT$VietTEL2020
